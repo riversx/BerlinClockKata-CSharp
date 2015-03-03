@@ -1,0 +1,139 @@
+Description
+
+The Berlin Clock (Mengenlehreclock or Berlin Uhr) is a clock that tells the time using a series of illuminated, coloured blocks. 
+It tells the time using the 'set theory principle', apparently. Either way, it tells the time using the following rules:
+
+    The clock is made up of 5 rows.
+    On the very top of the clock is a lamp that blinks to show the seconds. 
+	  It turns on for one second, then off for one second, and so on.
+    The next 2 rows represent the hours. 
+	  The upper most of these rows represents 5 hour blocks and is made up of 4 red lamps. 
+	  The second row represents 1 hour blocks and is also made up of 4 red lamps.
+    The final two rows represent the minutes. 
+	  The upper most row repesents 5 minute blocks and is made up of 11 lamps- every 3rd lamp red but the rest yellow. 
+	  The second row represents 1 minute blocks and is made up of 4 yellow lamps.
+
+
+	  
+Berlin Clock Text Representation
+
+Y
+RRRO
+ROOO
+YYRYYRYYRYO
+OOOO
+
+A textual representation of a Berlin Clock at 16:50:00
+
+
+
+|------------------------------------------------------------|
+Implement the Seconds Row
+As a clock user
+I want to be able to see seconds passing
+So that I can make sure my clock is working at a glance
+
+	On an even second, Y is returned for the top row.
+	On an odd second, O is returned for the top row.
+|------------------------------------------------------------|
+
+
+
+|------------------------------------------------------------|
+Implement the Single Minutes Row
+As a clock user
+I want to be able to see single minutes
+So that I can accurately tell the time down to the minute
+
+    When it is 1 minute past the hour, YOOO is returned.
+    When it is 2 minutes past the hour, YYOO is returned.
+    When it is 5 minutes past the hour, OOOO is returned.
+|------------------------------------------------------------|
+
+
+
+|------------------------------------------------------------|
+Implement the 5 Minutes Row
+As a clock user
+I want to be able to see 5 minutes
+So that I can tell higher minute amounts more easily
+
+    At 5 past the hour, YOOOOOOOOOO is returned.
+    At 15 past the hour, YYROOOOOOOOOO is returned.
+    At 55 past the hour, YYRYYRYYRYY is returned.
+|------------------------------------------------------------|
+
+
+
+|------------------------------------------------------------|
+Implement the Single Hours Row
+As a clock user
+I want to be able to see single hours
+So that I can tell what hour it is
+
+    When it is 1 hour past, ROOO is returned.
+    When it is 2 hours past, RROO is returned.
+    When it is 5 hours past, OOOO is returned.
+|------------------------------------------------------------|
+
+
+
+|------------------------------------------------------------|
+Implement the 5 Hours Row
+As a clock user
+I want to be able to see 5 hours
+So that I can tell higher hour amounts more easily
+
+    At 5 hours past, ROOO is returned.
+    At 15 hours past, RRRO is returned.
+    At 23 hour past, RRRR is returned.
+|------------------------------------------------------------|
+
+
+
+|------------------------------------------------------------|
+Integrate the Entire Berlin Clock
+As a clock user
+I want to be able to see an entire clock
+So that I can tell what the time is at a glance
+
+    See separate acceptance criteria cards for entire clock acceptance criteria.
+|------------------------------------------------------------|
+
+
+
+|------------------------------------------------------------|
+Some Acceptance Critera
+Input 		Output
+
+00:00:00 	Y
+			OOOO
+			OOOO
+			OOOOOOOOOOO
+			OOOO
+
+16:50:06 	Y
+			RRRO
+			ROOO
+			YYRYYRYYRYO
+			OOOO 
+|------------------------------------------------------------|
+
+
+
+|------------------------------------------------------------|
+More Acceptance Critera
+Input 		Output
+
+23:59:59 	O
+			RRRR
+			RRRO
+			YYRYYRYYRYY
+			YYYY
+
+11:37:01 	O
+			RROO
+			ROOO
+			YYRYYRYOOOO
+			YYOO
+|------------------------------------------------------------|
